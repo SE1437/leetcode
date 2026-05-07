@@ -42,9 +42,11 @@ int singleNumber(int* nums, int numsSize) {
     int two = 0;
     for(int count = 0 ; count < numsSize ; count++)
     {
-        one = (one ^ nums[count]) & ~two;
-        two = (two ^ nums[count]) & ~one;
+        one = (one ^ nums[count]) & ~two; //不是已出現過一次的, 若出現兩次的就會被消掉, 進入一次 buf
+        two = (two ^ nums[count]) & ~one; //不是已出現過兩次的, 若出現一次的就被消掉, 進入兩次 buf
     }
 
     return one;
 }
+
+//新值 in nums 與出現過一次buf 不一樣先記起來, 又檢查 出現過兩次的 不一樣才記起來到 只出現一次buf
