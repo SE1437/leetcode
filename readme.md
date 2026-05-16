@@ -41,3 +41,13 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ### git pull origin main
 
+把本地改動藏起來
+
+### git stash -u
+
+把本地改動秀出來
+
+### git stash pop
+
+
+
